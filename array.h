@@ -9,8 +9,11 @@ class Array : public Object {
         int capacity_; 
         Object* data_;
 
-        Array();
-        ~Array();
+        Array() {
+        }
+
+        ~Array() {
+        }
 
         virtual Object* get(int index);
         virtual void set(int index, Object* element);
