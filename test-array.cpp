@@ -3,8 +3,12 @@
 #include "array.h"
 #include <assert.h>
 
+Array* create_array(){
+    return 0;
+}
+
 void test_get() {
-    Array* a = new Array();
+    Array* a = create_array();
     String* s = new String("Fling");
     a->set(0, s);
     assert(a->get(0)->equals(s));
@@ -12,7 +16,7 @@ void test_get() {
 }
 
 void test_set() {
-    Array* a = new Array();
+    Array* a = create_array();
     String* s = new String("Fling");
     a->set(0, s);
     assert(a->data_[0].equals(s));
@@ -20,7 +24,7 @@ void test_set() {
 }
 
 void test_push_back() {
-    Array* a = new Array();
+    Array* a = create_array();
     String* s = new String("Fling");
     a->push_back(s);
     assert(1 == a->size());
@@ -28,7 +32,7 @@ void test_push_back() {
 }
 
 void test_swap() {
-    Array* a = new Array();
+    Array* a = create_array();
     String* s = new String("Fling");
     String* t = new String("Sting");
     a->push_back(s);
@@ -39,7 +43,7 @@ void test_swap() {
 }
 
 void test_remove() {
-    Array* a = new Array();
+    Array* a = create_array();
     String* s = new String("Fling");
     a->push_back(s);
     Object* t = a->remove(0);
@@ -47,7 +51,7 @@ void test_remove() {
 }
 
 void test_size() {
-    Array* a = new Array();
+    Array* a = create_array();
     assert(a->size() == 0);
     String* s = new String("Bling");
     a->push_back(s);
