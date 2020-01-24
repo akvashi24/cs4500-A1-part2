@@ -7,7 +7,7 @@ While there is certainly extra functionality that could be included, for
 example, some sort of iterative print function, we felt that this design
 was capable of being extended when necessary.
 
-## Fields
+#### Fields
 
 Fields necessarily constrain implementation.  That's why we kept the fields
 as short as possible.  The size and capacity of an array are necessary to
@@ -18,7 +18,7 @@ Array to use in its implementation, it's unlikely.  Arrays are one of the
 most basic data structures in any language, so we felt it should rely on
 as little as possible.
 
-## Methods
+#### Methods
 
 The methods are also relatively concise. Getting and setting are standard
 and require indices.  Pushback ensures that the user can add to the Array
@@ -27,7 +27,7 @@ Remove returns the object in the place of removal to enforce the user's
 maintenance of memory leaks.  Finally the size method allows access to
 a private field.
 
-## Constructor/Destructor
+#### Constructor/Destructor
 
 These methods don't have much constraints other than that a custom
 destructor will be necessary in order to delete any objects that are
