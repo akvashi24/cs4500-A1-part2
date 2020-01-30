@@ -19,7 +19,7 @@ void test_set() {
     Array* a = create_array();
     String* s = new String("Fling");
     a->set(0, s);
-    assert(a->data_[0].equals(s));
+    assert(a->data_[0]->equals(s));
     delete a;
 }
 

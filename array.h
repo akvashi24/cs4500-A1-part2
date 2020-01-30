@@ -7,7 +7,7 @@ class Array : public Object {
     public:
         int size_;
         int capacity_; 
-        Object* data_;
+        Object** data_;
 
         Array();
         virtual ~Array();
