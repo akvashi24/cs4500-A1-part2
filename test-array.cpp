@@ -58,6 +58,37 @@ void test_size() {
     assert(a->size() == 1);
 }
 
+void test_IntArray() {
+    IntArray* ia = new IntArray();
+    assert(ia->size() == 0);
+    ia->push_back(3);
+    ia->push_back(6);
+    assert(ia->size() == 2);
+    assert(ia->remove(0) == 3);
+    assert(ia->size() == 1);
+}
+
+void test_FloatArray() {
+    FloatArray* ia = new FloatArray();
+    assert(ia->size() == 0);
+    ia->push_back(3.1);
+    ia->push_back(6.2);
+    assert(ia->size() == 2);
+    assert(ia->remove(0) == 3.1);
+    assert(ia->size() == 1);
+}
+
+void test_BoolArray() {
+    BoolArray* ia = new BoolArray();
+    assert(ia->size() == 0);
+    ia->push_back(0);
+    ia->push_back(1);
+    assert(ia->size() == 2);
+    assert(ia->remove(0) == 0);
+    assert(ia->size() == 1);
+}
+
+
 int main(int argc, char* argv[]) {
     test_get();
     test_set();
@@ -65,4 +96,7 @@ int main(int argc, char* argv[]) {
     test_swap();
     test_remove();
     test_size();
+    test_IntArray();
+    test_FloatArray();
+    test_BoolArray();
 }
