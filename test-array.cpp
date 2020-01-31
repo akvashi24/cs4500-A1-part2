@@ -4,7 +4,7 @@
 #include <assert.h>
 
 Array* create_array(){
-    return 0;
+    return new Array();
 }
 
 void test_get() {
