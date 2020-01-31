@@ -74,7 +74,9 @@ void test_FloatArray() {
     ia->push_back(3.1);
     ia->push_back(6.2);
     assert(ia->size() == 2);
-    assert(ia->remove(0) == 3.1);
+    // assert(ia->remove(0) == 3.1);
+    float r = ia->remove(0);
+    assert((3.09 <= r) && (r <= 3.11));
     assert(ia->size() == 1);
 }
 
