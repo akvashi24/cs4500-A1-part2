@@ -13,6 +13,7 @@ void test_get() {
     a->set(0, s);
     assert(a->get(0)->equals(s));
     delete a;
+    delete s;
 }
 
 void test_set() {
@@ -21,6 +22,7 @@ void test_set() {
     a->set(0, s);
     assert(a->data_[0]->equals(s));
     delete a;
+    delete s;
 }
 
 void test_push_back() {
@@ -29,6 +31,7 @@ void test_push_back() {
     a->push_back(s);
     assert(1 == a->size());
     delete a;
+    delete s;
 }
 
 void test_swap() {
@@ -40,6 +43,9 @@ void test_swap() {
     a->swap(0, 1);
     assert(a->get(0)->equals(t));
     assert(a->get(1)->equals(s));
+    delete a;
+    delete s;
+    delete t;
 }
 
 void test_remove() {
@@ -48,6 +54,8 @@ void test_remove() {
     a->push_back(s);
     Object* t = a->remove(0);
     assert(t->equals(s));
+    delete a;
+    delete s;
 }
 
 void test_size() {
@@ -56,6 +64,8 @@ void test_size() {
     String* s = new String("Bling");
     a->push_back(s);
     assert(a->size() == 1);
+    delete a; 
+    delete s;
 }
 
 void test_IntArray() {
@@ -66,28 +76,31 @@ void test_IntArray() {
     assert(ia->size() == 2);
     assert(ia->remove(0) == 3);
     assert(ia->size() == 1);
+    delete ia;
 }
 
 void test_FloatArray() {
-    FloatArray* ia = new FloatArray();
-    assert(ia->size() == 0);
-    ia->push_back(3.1);
-    ia->push_back(6.2);
-    assert(ia->size() == 2);
-    // assert(ia->remove(0) == 3.1);
-    float r = ia->remove(0);
+    FloatArray* fa = new FloatArray();
+    assert(fa->size() == 0);
+    fa->push_back(3.1);
+    fa->push_back(6.2);
+    assert(fa->size() == 2);
+    // assert(fa->remove(0) == 3.1);
+    float r = fa->remove(0);
     assert((3.09 <= r) && (r <= 3.11));
-    assert(ia->size() == 1);
+    assert(fa->size() == 1);
+    delete fa;
 }
 
 void test_BoolArray() {
-    BoolArray* ia = new BoolArray();
-    assert(ia->size() == 0);
-    ia->push_back(0);
-    ia->push_back(1);
-    assert(ia->size() == 2);
-    assert(ia->remove(0) == 0);
-    assert(ia->size() == 1);
+    BoolArray* ba = new BoolArray();
+    assert(ba->size() == 0);
+    ba->push_back(0);
+    ba->push_back(1);
+    assert(ba->size() == 2);
+    assert(ba->remove(0) == 0);
+    assert(ba->size() == 1);
+    delete ba;
 }
 
 
